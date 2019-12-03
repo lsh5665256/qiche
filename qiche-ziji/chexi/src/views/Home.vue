@@ -5,11 +5,11 @@
         <span>{{key}}</span>
       </p>
       <!-- 这里是锚点链接，锚点猫的是id，既这里的key，是唯一的，在这里ABC -->
-      <dl v-for="(item,index) in value" :key="index">
+      <dl v-for="(item,index) in value" :key="index" @click="tanchu(item.MasterID)">
         <dt>
           <img v-lazy="item.CoverPhoto" alt />
         </dt>
-        <dd @click="tanchu(item.MasterID)">{{item.Name}}</dd>
+        <dd >{{item.Name}}</dd>
       </dl>
     </div>
     <!-- 右边定位 -->
@@ -25,7 +25,7 @@
     <div class="mask" :class="{active:flag}">
       <div v-for="(item,index) in tarr" :key="index">
         <p class="mp" @click="flag=false">{{item.GroupName}}</p>
-        <div v-for="(ite,ind) in item.GroupList" :key="ind" class="mbig" @click="tiao(item.SerialID)">
+        <div v-for="(ite,ind) in item.GroupList" :key="ind" class="mbig" @click="tiao(ite.SerialID)">
           <img :src="ite.Picture" alt class="mimg" />
           <div class="msmall">
             <p>{{ite.AliasName}}</p>
@@ -83,7 +83,7 @@ export default {
         });
     },
     tiao(id){
-       this.$router.push("/detail/"+id)
+       this.$router.push({path:"/detail",query:{SerialID:id}})
     }
   }
 };
@@ -122,9 +122,9 @@ dt > img {
 }
 .a1 {
   width: 100%;
-  height: 40px;
-  background: #ccc;
-  line-height: 40px;
+  height: 30px;
+  background: #f4f4f4;
+  line-height: 30px;
 }
 .a1 span {
   margin-left: 10px;
@@ -158,7 +158,7 @@ a {
 .mp {
   width: 100%;
   height: 30px;
-  background: #ccc;
+  background: #f4f4f4;
   line-height: 30px;
 }
 .mimg {
