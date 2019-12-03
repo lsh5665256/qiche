@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueLazyload from 'vue-lazyload'
+import "lib-flexible/flexible.js"
 Vue.use(VueLazyload)
 import axios from "axios"
 Vue.prototype.axios=axios
