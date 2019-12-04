@@ -1,4 +1,4 @@
-import {nashuju} from '@/services/index'
+import {nacity} from '@/services/index'
 
 const state = {
     list: []
@@ -11,9 +11,9 @@ const mutations = {
 }
 
 const actions = {
-    async  nashuju({commit}, payload){
-        let res = await nashuju({cityId:201,carId:138648});
-        console.log('res...', res.data);
+    async  getlist({commit}, payload){
+        let res = await nacity();
+        console.log('res...', res);
         commit('updateList', res.data);
     }
 }

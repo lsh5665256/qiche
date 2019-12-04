@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Zxdj from "../views/Zxdj.vue"
+import City from "../views/city.vue"
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,6 +27,11 @@ const routes = [
   {
     path: '/Zxdj',
     component: Zxdj
+  },
+  {
+    path: '/city',
+    
+    component: City
   },
 ]
 
