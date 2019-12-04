@@ -5,7 +5,7 @@
         <span>{{key}}</span>
       </p>
       <!-- 这里是锚点链接，锚点猫的是id，既这里的key，是唯一的，在这里ABC -->
-      <dl v-for="(item,index) in value" :key="index" @click="tanchu(item.MasterID)">
+      <dl v-for="(item,index) in value" :key="index" @click="tanchu(item.MasterID)" >
         <dt>
           <img v-lazy="item.CoverPhoto" alt />
         </dt>
@@ -46,7 +46,7 @@ export default {
       obj2: {},
       flag: false,
       tarr: null
-    };
+    }; 
   },
 
   created() {
@@ -105,10 +105,12 @@ dl {
   align-items: center;
   border-bottom: 1px solid #ccc;
   margin-top: 5px;
+  margin: 0 15px 0;
 }
 dt > img {
   width: 40px;
   height: 40px;
+  margin-right: 15px;
 }
 
 .line {
@@ -125,6 +127,7 @@ dt > img {
   height: 30px;
   background: #f4f4f4;
   line-height: 30px;
+  padding-left: 15px;
 }
 .a1 span {
   margin-left: 10px;
@@ -144,6 +147,7 @@ a {
   transform: translateX(100%);
   transition: all 1s ease;
   overflow-y: auto;
+  position: fixed;
 }
 .mask.active {
   transition: all 1s ease;
@@ -154,6 +158,8 @@ a {
 }
 .wrap {
   width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .mp {
   width: 100%;
